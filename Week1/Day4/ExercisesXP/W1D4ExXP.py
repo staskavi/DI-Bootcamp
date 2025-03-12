@@ -50,3 +50,20 @@ for i in basket:
 print("Amount of apples in basket are: "+str(counter))
 basket.clear()
 print(basket)
+#  Exercise 4: Floats
+# Instructions
+#     Recap – What is a float? What is the difference between an integer and a float?
+#     Create a list containing the following sequence of floats and integers (it should be a list with mixed types): 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 (don’t hard-code the sequence).
+#     Can you think of another way to generate a sequence of floats?
+import random
+list_float_int = []
+i = 1
+j = 0.5
+while i<10:
+    if((j+0.5).is_integer()):
+        list_float_int.insert(i,int(j+0.5))
+    else:
+       list_float_int.insert(i,j+0.5)
+    j+=0.5
+    i += 1
+print(list_float_int)
