@@ -33,16 +33,16 @@ print(user_list)
 # Final strings won’t include words with double letters (e.g. “passing”, “lottery”).   
 print("Enter string...")
 user_str = input()
-formatted_str = user_str
-a = list(formatted_str)
+formatted_str = ""
+user_list = list(user_str)
 new_list = []
-new_list.append(a[0])
+new_list.append(user_list[0])
 i = 0
 j=0
 k=len(user_str)-1
 while(k):
-     if(new_list[j]!=a[i+1]):
-         new_list.insert(j+1,a[i+1])
+     if(new_list[j]!=user_list[i+1]):
+         new_list.insert(j+1,user_list[i+1])
          j+=1
      i+=1
      k-=1
