@@ -24,7 +24,14 @@ print(dict(my_dict))
 #     How much does each family member have to pay ?
 #     Print out the family’s total cost for the movies.
 #     Bonus: Ask the user to input the names and ages instead of using the provided family variable (Hint: ask the user for names and ages and add them into a family dictionary that is initially empty).
-family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
+family = {}
+family_members = int(input("Please enter number of family members..."))
+while(family_members):
+ name = input("Please enter name...")
+ age = int(input("Please enter age..."))
+ family[name] = age
+ family_members-=1
+print(family)
 total_tickets_price = 0
 for x in family:
   if(family[x] < 3):
