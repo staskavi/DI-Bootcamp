@@ -24,18 +24,6 @@ for index, char in enumerate(word):
 print(word_dict)    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Challenge 2
 
 #     Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
@@ -76,15 +64,37 @@ print(word_dict)
 # In fact the prices of Apple + Honey + Fan + Bananas + Pan is more that $100, so you cannot by the Pan, 
 # instead you can by the Spoon that is $2
 
-# items_purchase = {
-#   "Phone": "$999",
-#   "Speakers": "$300",
-#   "Laptop": "$5,000",
-#   "PC": "$1200"
-# }
+items_purchase = {
+  "Phone": "$999",
+  "Speakers": "$300",
+  "Laptop": "$5,000",
+  "PC": "$1200"
+}
 
-# wallet = "$1" 
+wallet = "$1" 
 
 # ➞ "Nothing"
+buying_list = []
+wallet_amount = int(wallet[1:])
+for key in items_purchase:
+    if (',' in items_purchase[key]):
+        items_purchase[key] = items_purchase[key].replace(",","")
+    items_purchase[key] = int(items_purchase[key][1:])
 
-
+sorted_items_purchase = dict(sorted(items_purchase.items(), key=lambda item: item[1]))
+print(sorted_items_purchase)
+for key in sorted_items_purchase:
+        buying_list.append(key)
+        wallet_amount-=sorted_items_purchase[key]
+        if(wallet_amount == 0):
+          break
+        elif(wallet_amount < 0):
+            wallet_amount+=sorted_items_purchase[key]
+            buying_list.remove(key)
+            break
+if(not buying_list):
+    print("Nothing")
+else:  
+   buying_list.sort()   
+   print(buying_list)          
+          
